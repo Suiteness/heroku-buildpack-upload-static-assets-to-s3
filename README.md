@@ -19,19 +19,19 @@ AWS_STATIC_SOURCE_DIRECTORY=public
 # Exported Environment Variables to runtime
 
 ```sh
-STATIC_SERVER=<AWS_STATIC_BUCKET_NAME>.s3.amazonaws.com
-STATIC_PATH=/<AWS_STATIC_PREFIX>/<YYYY-MM-DD>/<git-commit-sha1>
+STATIC_ASSETS_SERVER=<AWS_STATIC_BUCKET_NAME>.s3.amazonaws.com
+STATIC_ASSETS_URL_PREFIX=$STATIC_ASSETS_SERVER/$AWS_STATIC_PREFIX
 ```
 
 These variables can be overriden with config vars as expected
 
 ```
-heroku config:set STATIC_SERVER=your.cdn.host
+heroku config:set STATIC_ASSETS_SERVER=your.cdn.host
 ```
 
 To return to the default value just unset the config vars
 
 ```
-heroku config:unset STATIC_SERVER
+heroku config:unset STATIC_ASSETS_SERVER
 ```
 
